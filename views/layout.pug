@@ -1,0 +1,21 @@
+block variables
+
+<!DOCTYPE html>
+html(lang="fr")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="style.css")
+        title #{title} - Blog Node.js
+    body
+        header
+            .header-center
+                aside 
+                    h1 Node Blog
+                    p Node JS is cool
+                a(href="/admin").button Administration
+        .container
+            block content
+    footer
+        a(href="cgu.html") Legal Notice
+    

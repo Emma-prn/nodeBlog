@@ -1,0 +1,35 @@
+extends layout.pug
+ 
+block variables
+    - let title = 'Publier un article';
+ 
+block content
+    a(href="/admin") Retour à l'espace d'administration
+    h1 Ecrire un nouvel article
+    p Renseigner le formulaire suivant pour ajouter un nouvel article.
+    form(action="#", method="post")
+        fieldset
+            legend Ajout d'un article
+            label(for="") Titre : 
+            input(type="text" name="title" placeholder="Titre de votre article")
+            br
+            br
+            label(for="") Catégorie : 
+            select(name="categorie")
+                option(value="informatique") Informatique
+                option(value="sport") Sport
+                option(value="detente") Détente
+                option(value="litterature") Littérature
+            br
+            br
+            label(for="") Contenu : 
+            textarea(name="contenu", cols="30", rows="10")
+            br
+            br
+            label(for="") Auteur : 
+            select(name="auteur")
+                option(value="AR") Arthur Rimbaud
+                option(value="PV") Paul Verlaine
+            br
+            br
+            input(type="submit" value="Publier").button

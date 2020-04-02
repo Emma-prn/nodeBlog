@@ -1,0 +1,21 @@
+extends layout.pug
+ 
+block variables
+    - let title = 'Accueil';
+ 
+block content
+    h1 Bienvenue sur mon blog
+    p Voici la liste des derniers articles du blog :
+    - var values = articles;
+    ul 
+        each article in articles
+            li
+                h2=article.title
+                p=article.content.substring(0,150)
+                     span  ...
+                a(href="/article") Lire la suite
+                p Publié le 
+                    span=article.dateCreated
+                    span par 
+                    span=article.author.name
+                    span.cat=article.category.title

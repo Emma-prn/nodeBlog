@@ -1,0 +1,39 @@
+extends layout.pug
+ 
+block variables
+    - let title = 'Administration';
+ 
+block content
+    h1 Bienvenue dans l'espace d'administration
+    a(href="/write").button Publier un nouvel article
+    p Cet espace vous permet de gérer et administrer les articles présents sur votre blog !
+    table
+        tr
+            th #
+            th Date de publication
+            th Titre
+            th Auteur
+            th Catégorie
+            th Action
+        tr
+            td 1
+            td le 17/05/2020
+            td Voyage en Italie
+            td Arthur Rimbaud
+            td Littérature
+            td Modifier - Supprimer
+        tr
+            td 2
+            td le 17/08/2020
+            td Séance de yoga
+            td Paul Verlaine
+            td Détente
+            td Modifier - Supprimer
+        tr
+            td 2
+            td le 17/01/2020
+            td Le sport dans la vie
+            td Arthur Rimbaud
+            td Sport
+            td Modifier - Supprimer
+    
