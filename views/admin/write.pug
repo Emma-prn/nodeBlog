@@ -7,7 +7,7 @@ block content
     a(href="/admin") Retour à l'espace d'administration
     h1 Ecrire un nouvel article
     p Renseigner le formulaire suivant pour ajouter un nouvel article.
-    form(action="#", method="post")
+    form(action="", method="post")
         fieldset
             legend Ajout d'un article
             label(for="") Titre : 
@@ -16,10 +16,8 @@ block content
             br
             label(for="") Catégorie : 
             select(name="categorie")
-                option(value="informatique") Informatique
-                option(value="sport") Sport
-                option(value="detente") Détente
-                option(value="litterature") Littérature
+                each cat in categories
+                    option(value=cat.id)=cat.title
             br
             br
             label(for="") Contenu : 
@@ -28,8 +26,8 @@ block content
             br
             label(for="") Auteur : 
             select(name="auteur")
-                option(value="AR") Arthur Rimbaud
-                option(value="PV") Paul Verlaine
+                each aut in authors
+                    option(value=aut.id)=aut.name
             br
             br
             input(type="submit" value="Publier").button
