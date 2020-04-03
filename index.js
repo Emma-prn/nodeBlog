@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const app = express();
 const blogRouter = require('./blog.router');
 
+// Pour récupérer les données
+const bodyParser = require('body-parser');
+
 app.set('view engine', 'pug');
 app.set('views', './views');
 
@@ -13,6 +16,7 @@ const HOST = 'localhost';
 
 app.use('/', blogRouter);
 app.use(express.static('./public'));
+app.use(bodyParser.urlencoded({extended: false}));
 
 // Démarrage application
 
